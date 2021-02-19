@@ -54,14 +54,3 @@ export default Details;
 // 4. plug info into render method using <h1> or <p> or something. 
 // <small class="text-muted">Rating: <StarRating rating={rating}/></small>
 // import StarRating from ./components/starRating
-
-<img
-class="bd-placeholder-img card-img-top"
-width="100%"
-height="225"
-src= {image.url === "" ? "default image" : `http://157.230.232.55${image.url}`}
-role="img"
-aria-label="Placeholder: Thumbnail"
-preserveAspectRatio="xMidYMid slice"
-focusable="false"
-/>

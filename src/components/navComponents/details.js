@@ -18,7 +18,7 @@ class Details extends Component {
     
     render() { 
        console.log(this.state.movie) 
-       const {title, genre, rating, released, image, id, desxription} = this.state.movie
+       const {title, genre, rating, released, id, desxription} = this.state.movie
             return (
             <div class="card"> 
                 <div class="card-body">
@@ -28,7 +28,7 @@ class Details extends Component {
                         class="bd-placeholder-img card-img-top"
                         width="100%"
                         height="225"
-                        src= {this.state.poster === null ? "default image" : `http://157.230.232.55${image.url}`}
+                        src= {this.state.poster === null ? "default image" : `http://157.230.232.55${this.state.poster.url}`}
                         role="img"
                         aria-label="Placeholder: Thumbnail"
                         preserveAspectRatio="xMidYMid slice"

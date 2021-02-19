@@ -5,14 +5,14 @@ import StarRating from "../starRating"
 class Details extends Component {
     constructor(props) {
     super(props)
-    this.state= {movie: ""};
+    this.state= {movie: "", poster: ""};
     }
 
     //'http://IP/movies/{this.props.match.params.id}
     componentDidMount() {
         axios
             .get(`http://157.230.232.55/movies/${this.props.match.params.id}`)
-            .then((response) => this.setState({movie: response.data}))
+            .then((response) => this.setState({movie: response.data, poster: response.data.image}))
     }
     
     
@@ -23,7 +23,18 @@ class Details extends Component {
             <div class="card"> 
                 <div class="card-body">
                   <h5 class="card-title">{title}</h5>
-                  <h1>IMAGE PALCEHOLDER</h1>
+                  <h1>
+                      <img
+                        class="bd-placeholder-img card-img-top"
+                        width="100%"
+                        height="225"
+                        src= {this.state.poster === null ? "default image" : `http://157.230.232.55${image.url}`}
+                        role="img"
+                        aria-label="Placeholder: Thumbnail"
+                        preserveAspectRatio="xMidYMid slice"
+                        focusable="false"
+                        />
+                  </h1>
                   <div>Release Date: {released}</div>
                   <div>Genre: {genre}</div>
                   <p class="card-text">{desxription}</p>
@@ -44,13 +55,13 @@ export default Details;
 // <small class="text-muted">Rating: <StarRating rating={rating}/></small>
 // import StarRating from ./components/starRating
 
-//<img
-//class="bd-placeholder-img card-img-top"
-//width="100%"
-//height="225"
-//src= {image.url === "" ? "default image" : `http://157.230.232.55${image.url}`}
-//role="img"
-//aria-label="Placeholder: Thumbnail"
-//preserveAspectRatio="xMidYMid slice"
-//focusable="false"
-///>
+<img
+class="bd-placeholder-img card-img-top"
+width="100%"
+height="225"
+src= {image.url === "" ? "default image" : `http://157.230.232.55${image.url}`}
+role="img"
+aria-label="Placeholder: Thumbnail"
+preserveAspectRatio="xMidYMid slice"
+focusable="false"
+/>

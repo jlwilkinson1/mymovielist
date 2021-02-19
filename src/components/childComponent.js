@@ -8,8 +8,8 @@ class ChildComponent extends Component {
       console.log(this.props.movie)
         const {title, genre, rating, released,desxription, image, id} = this.props.movie
         return(
-          <div class="card"> 
-                <div class="card-body">
+          <div class="col m-">
+          <div class="card shadow-sm">
             <img
               class="bd-placeholder-img card-img-top"
               width="100%"
@@ -38,9 +38,9 @@ class ChildComponent extends Component {
                   </button>
                   </Link>
                 </div>
-                <div>
+                <div></div>
                 <small class="text-muted"><StarRating rating={rating}/></small>
-                </div>
+                
               </div>
             </div>
           </div>
